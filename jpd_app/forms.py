@@ -2,16 +2,16 @@ from django import forms
 from django.forms import ModelForm
 from jpd_app.models import models, newsPost
 
-class newsPostForm(ModelForm):
-    class Meta:
-        model = newsPost
-        fields = ('title', 'message', 'author',)
-
-        widgets = {
-            'title': forms.TextInput(attrs={'class':'form-control', 'id': 'titleBar'}),
-            'message': forms.Textarea(attrs={'class':'form-control', 'id':'messageBar'}),
-            'author': forms.TextInput(attrs={'class':'form-control', 'value':'', 'id':'authortag', 'type':'hidden'}),
-        }
+#class newsPostForm(ModelForm):
+ #   class Meta:
+#        model = newsPost
+#        fields = ('title', 'message', 'author',)
+#
+#        widgets = {
+#            'title': forms.TextInput(attrs={'class':'form-control', 'id': 'titleBar'}),
+#            'message': forms.Textarea(attrs={'class':'form-control', 'id':'messageBar'}),
+#            'author': forms.TextInput(attrs={'class':'form-control', 'value':'', 'id':'authortag', 'type':'hidden'}),
+#        }
 
 class newCustomerForm(forms.Form):
     First_Name = forms.CharField(help_text="First Name")
