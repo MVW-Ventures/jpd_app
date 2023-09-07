@@ -18,6 +18,7 @@ from django.urls import path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
 from jpd_app.views import *
 
 
@@ -29,6 +30,7 @@ urlpatterns = [
     path('about', views.about, name="about"),
     path('contact', views.contact, name="contact"),
     path('photos', views.photos, name="photos"),
+    path('admin/', admin.site.urls),
 #    path('accounts/', include('django.contrib.auth.urls')),
   
 ]
