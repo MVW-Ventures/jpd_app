@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'jpd_app.wsgi.application'
 #}
 
 
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "True") == "True"
+DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 DATABASE_URL = os.getenv('DATABASE_URL', None)
 db_info = urlparse(DATABASE_URL)
 
