@@ -13,6 +13,7 @@ from django.core.management.utils import get_random_secret_key
 import os
 import sys
 import dj_database_url
+from urllib.parse import urlparse
 from pathlib import Path
 
 
@@ -89,6 +90,8 @@ WSGI_APPLICATION = 'jpd_app.wsgi.application'
 
 
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "True") == "True"
+DATABASE_URL = os.getenv('DATABASE_URL', None)
+db_info = urlparse(DATABASE_URL)
 
 if DEVELOPMENT_MODE is True:
      DATABASES = {
@@ -101,7 +104,15 @@ elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
      if os.getenv("DATABASE_URL", None) is None:
          raise Exception("DATABASE_URL environment variable not defined")
      DATABASES = {
-         "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+        'default': {
+             'ENGINE' : 'django.db.backends.postgresql_psycopg2',
+             'NAME' : 'db',
+             'USER' : db_info.username,
+             'PASSWORD': db_info.password,
+             'HOST': db_info.hostname,
+             'PORT': db_info.port,
+             'OPTIONS': {'sslmode': 'require'}
+        }
      }
 
 # Password validation
