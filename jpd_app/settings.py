@@ -87,33 +87,21 @@ WSGI_APPLICATION = 'jpd_app.wsgi.application'
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 #}
-
-
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
-DATABASE_URL = os.getenv('DATABASE_URL', None)
-db_info = urlparse(DATABASE_URL)
 
 if DEVELOPMENT_MODE is True:
-     DATABASES = {
-         "default": {
-             "ENGINE": "django.db.backends.sqlite3",
-             "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-         }
-     }
-elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-     if os.getenv("DATABASE_URL", None) is None:
-         raise Exception("DATABASE_URL environment variable not defined")
-     DATABASES = {
-        'default': {
-             'ENGINE' : 'django.db.backends.postgresql_psycopg2',
-             'NAME' : 'db',
-             'USER' : 'db',
-             'PASSWORD': 'AVNS_r1d6NNOl84uqofG96x7',
-             'HOST': 'app-3ed18acc-7e20-453d-b0c2-a7f3d371b11c-do-user-14612932-0.b.db.ondigitalocean.com',
-             'PORT': '25060',
-             'OPTIONS': {'sslmode': 'require'}
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
         }
-     }
+    }
+elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
+    if os.getenv("DATABASE_URL", None) is None:
+        raise Exception("DATABASE_URL environment variable not defined")
+    DATABASES = {
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
