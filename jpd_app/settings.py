@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'jpd_app.wsgi.application'
 #}
 
 
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "True") == "True"
 
 if DEVELOPMENT_MODE is True:
      DATABASES = {
@@ -122,6 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'jpd_app.UserProfile'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

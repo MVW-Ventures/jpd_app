@@ -2,7 +2,7 @@ import re
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template import RequestContext
 from django.http import HttpResponse
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth import *
 from django.views.generic import ListView, FormView, CreateView
 from jpd_app.models import *
 from jpd_app.forms import *
