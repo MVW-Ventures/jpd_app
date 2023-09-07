@@ -3,8 +3,7 @@ from jpd_app.models import Region, Service, Customer, Marina, Boat, Employee, Ap
 
 # Register your models here.
 
-#admin.site.register(UserProfile)
-#admin.site.register(newsPost)
+
 admin.site.register(Service)
 admin.site.register(Customer)
 admin.site.register(Marina)
