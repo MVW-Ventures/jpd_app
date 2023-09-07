@@ -1,5 +1,5 @@
 from django.contrib import admin
-from jpd_app.models import UserProfile, newsPost, Region, Service, Customer, Marina, Boat, Employee, Appointment
+from jpd_app.models import Region, Service, Customer, Marina, Boat, Employee, Appointment
 
 # Register your models here.
 
