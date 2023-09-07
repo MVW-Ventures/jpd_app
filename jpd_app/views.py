@@ -16,8 +16,6 @@ def products(request):
 
 def vendors(request):
     return render(request, 'vendorMenu.html', {})
-    
-    return render(request, 'news.html', context)
 
 def contact(request):
     return render(request, 'contact.html', {})
