@@ -8,8 +8,8 @@ from jpd_app.models import *
 from jpd_app.forms import *
 
 # Create your views here.
-#def home(request):
-#    return render(request, 'home.html', )
+def home(request):
+    return render(request, 'home.html', )
 
 #def products(request):
 #    return render(request, 'productMenu.html', {})

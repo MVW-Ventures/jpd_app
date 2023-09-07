@@ -23,13 +23,13 @@ from jpd_app.views import *
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('home', views.home, name="home"),
-    path('products', views.products, name="products"),
-    path('vendors', views.vendors, name="vendors"),
-    path('news/', views.news, name="news"),
-    path('about', views.about, name="about"),
-    path('contact', views.contact, name="contact"),
-    path('photos', views.photos, name="photos"),
+#    path('home', views.home, name="home"),
+#    path('products', views.products, name="products"),
+#    path('vendors', views.vendors, name="vendors"),
+#    path('news/', views.news, name="news"),
+#    path('about', views.about, name="about"),
+ #   path('contact', views.contact, name="contact"),
+#    path('photos', views.photos, name="photos"),
 
   
 ]

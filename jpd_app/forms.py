@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from jpd_app.models import models, newsPost
+from jpd_app.models import models
 
 #class newsPostForm(ModelForm):
  #   class Meta:
