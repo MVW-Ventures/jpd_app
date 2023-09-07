@@ -29,12 +29,12 @@ urlpatterns = [
     path('about', views.about, name="about"),
     path('contact', views.contact, name="contact"),
     path('photos', views.photos, name="photos"),
-    path('accounts/', include('django.contrib.auth.urls')),
+#    path('accounts/', include('django.contrib.auth.urls')),
   
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += [
-    path('accounts/', include('django.contrib.auth.urls')),
-]
+# urlpatterns += [
+#     path('accounts/', include('django.contrib.auth.urls')),
+# ]
