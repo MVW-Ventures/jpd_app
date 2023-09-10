@@ -22,7 +22,7 @@ from django.contrib import admin
 from jpd_app.views import *
 
 
-# urlpatterns = [
+urlpatterns = [
 #     path('', views.home, name="home"),
 #     path('home', views.home, name="home"),
 #     path('products', views.products, name="products"),
@@ -30,10 +30,10 @@ from jpd_app.views import *
 #     path('about', views.about, name="about"),
 #     path('contact', views.contact, name="contact"),
 #     path('photos', views.photos, name="photos"),
-#     path('admin/', admin.site.urls),
+     path('admin/', admin.site.urls),
 # #    path('accounts/', include('django.contrib.auth.urls')),
   
-# ]
+]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
